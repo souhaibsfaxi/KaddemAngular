@@ -1,0 +1,80 @@
+<h2 class="container" style="text-align: center;"> Liste des Entreprise</h2>
+<div class="container text-center">
+    <button (click)="goToEntreprises()" class="btn btn-info">Liste des entreprises</button>
+    <button (click)="goToAddEntreprise()" class="btn btn-info" style="margin-left: 10px;">Ajouter Entreprise +</button> 
+    <br>
+    <br>
+  </div>
+
+  <h3 class="container">Recherche</h3>
+  
+  <!-- search bar -->
+  <div class="container">
+    <div class="row">
+      <div class="search-hero">
+        
+        <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" 
+        placeholder="&#xF52A;    Recherche d'une entreprise par nom ou localisation"
+        [ngStyle]="{ color: 'rgb(0, ' + (entreprises.indexOf) + ', 0)' }">
+      </div>
+      <br>
+      <br>
+      <table class="table table-bordered ">
+        
+        <thead >
+        <tr>
+          <th>Nom de l'entreprise</th>
+          <th>Localisation</th>
+          <!-- <th>Country</th> -->
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr *ngFor="let entreprise of entreprises | filter:searchText" >
+          <td>{{entreprise.nomEntreprise}}</td>
+           <td>{{entreprise.localisation}}</td>
+         <!-- <td>{{entreprise.country}}</td> -->
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+<br>
+<br>
+
+
+<div class="container">
+    <div class="card">
+      <div class="card-header">
+        <h3 class="text-align center">Entreprises</h3>
+      </div>
+      <div class="card-body">
+        <table class="table table-hover">
+          <thead>
+            <tr class="text-center">
+              <th>Name</th>
+              <th>Location</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let entreprise of entreprises">
+            <td>{{entreprise.nomEntreprise}}</td>
+            <td>{{entreprise.localisation}}</td>
+            <td >
+                <button (click)="gotoUpdate(entreprise.idEntreprise)" class="btn btn-light">Modifier</button>
+                <button (click)="deleteAndGotoEntreprises(entreprise.idEntreprise)" class="btn btn-light">Supprimer</button>
+                <button (click)="goToDetails(entreprise.idEntreprise)" class="btn btn-light">Détails</button>
+            </td>
+            
+                
+            
+        </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>

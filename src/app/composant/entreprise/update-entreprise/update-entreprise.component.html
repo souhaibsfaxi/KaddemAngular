@@ -1,0 +1,35 @@
+<div class="col-md-6 offset-md-3" >
+    <h3>Update entreprise</h3>
+    <form (ngSubmit)="onSubmit()"> 
+        <div class="form-group">
+            <label for="">Nom</label>
+            <input type="text" class="form-control" id ="nomEntreprise" 
+            [(ngModel)]="entreprise.nomEntreprise" name="nomEntreprise">
+        </div>
+        <div class="form-group">
+            <label for="">Localisation</label>
+            <input type="text" class="form-control" id ="localisation" 
+            [(ngModel)]="entreprise.localisation" name="localisation">
+        </div>
+        <div class="form-group">
+            <label for="">Adresse Mail</label>
+            <input type="text" class="form-control" id ="emailEntreprise" 
+            [(ngModel)]="entreprise.emailEntreprise" name="emailEntreprise">
+        </div>
+        <div class="form-group">
+            <label for="">Date début Alternance</label>
+            <input type="date" class="form-control" id ="dateDebutAlternance" 
+            [(ngModel)]="entreprise.dateDebutAlternance" name="dateDebutAlternance">
+        </div>
+        <div class="form-group">
+            <label for="">Date fin Alternance</label>
+            <input type="date" class="form-control" id ="dateFinAlternance" 
+            [(ngModel)]="entreprise.dateFinAlternance" name="dateFinAlternance">
+        </div>
+    
+        <button class="btn btn-light" type="submit">Update</button>
+    </form>
+    
+    </div>
+    
+
